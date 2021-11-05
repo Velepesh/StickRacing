@@ -9,7 +9,6 @@ public class Stick : MonoBehaviour
 
     private bool _isThrowing = false;
     private Vector3 _direction;
-    public Vector3 Direction => _direction;
 
     private void OnEnable()
     {
@@ -33,6 +32,8 @@ public class Stick : MonoBehaviour
 
     public void Throwing(Vector3 targetPoint)
     {
+        transform.SetParent(null);
+
         _isThrowing = true;
         _direction = (targetPoint - transform.position).normalized;
         transform.LookAt(targetPoint);

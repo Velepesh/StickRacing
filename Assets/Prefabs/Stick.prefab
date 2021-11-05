@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &394737063964424380
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2160385350409310358}
-  m_Layer: 16
-  m_Name: ConnectionPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2160385350409310358
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394737063964424380}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0022, y: 0.0023, z: -0.0079}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 391195555909940974}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &874971696639331570
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +62,6 @@ Transform:
   m_Children:
   - {fileID: 104846220667706915}
   - {fileID: 5446997741015966154}
-  - {fileID: 2160385350409310358}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -112,7 +81,6 @@ MonoBehaviour:
   _stick: {fileID: 6614815522632046063}
   _speed: 1
   _rotationSpeed: 570
-  _dynamicBone: {fileID: 8640819978070981522}
 --- !u!114 &8640819978070981522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +302,7 @@ GameObject:
   - component: {fileID: 304379061544496765}
   - component: {fileID: 3998511614281240256}
   - component: {fileID: 760009308968561273}
+  - component: {fileID: 7547086198045810686}
   m_Layer: 2
   m_Name: joint1
   m_TagString: Untagged
@@ -385,7 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stick: {fileID: 8760976677502858560}
-  _connectionPoint: {fileID: 2160385350409310358}
 --- !u!65 &760009308968561273
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -397,8 +365,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.005, y: 0.025, z: 0.025}
-  m_Center: {x: -0.0025, y: 0, z: 0}
+  m_Size: {x: 0.0025, y: 0.01, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &7547086198045810686
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614815522632046063}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.01
+  m_Center: {x: -0.01, y: 0, z: 0}
 --- !u!1 &6875798745525690478
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StickSpawner : MonoBehaviour
@@ -18,11 +17,9 @@ public class StickSpawner : MonoBehaviour
             _currentStick = Spawn();
     }
 
-    public Stick SpawnNewStick()
+    public void SpawnNewStick()
     {
-        _currentStick = Spawn();
-    
-        return _currentStick;
+        StartCoroutine(SpawnWithDelay());
     }
 
     private IEnumerator SpawnWithDelay()

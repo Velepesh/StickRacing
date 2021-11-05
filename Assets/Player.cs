@@ -1,28 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private StickSpawner _stickSpawner;
 
-    private Stick _currentStick;
-
-    private void Start()
-    {
-        _currentStick = _stickSpawner.CurrentStick;
-    }
+    public event UnityAction Thrown;
 
     public void ThrowStick(Vector3 targetPoint)
     {
-        _currentStick.Throwing(targetPoint);
+        Stick stick = _stickSpawner.CurrentStick;
 
-        TakeAnotherStick();
-    }
+        if (stick != null)
+            stick.Throwing(targetPoint);
 
-    private void TakeAnotherStick()
-    {
-        //_currentStick = null;
-        _currentStick = _stickSpawner.SpawnNewStick();
+        _stickSpawner.SpawnNewStick();
+
+        Thrown?.Invoke();
     }
 }

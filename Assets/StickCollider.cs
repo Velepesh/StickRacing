@@ -5,7 +5,6 @@ using UnityEngine.Events;
 public class StickCollider : MonoBehaviour
 {
     [SerializeField] private Stick _stick;
-    [SerializeField] private Transform _connectionPoint;
 
     private Rigidbody _rigidbody;
 
@@ -18,11 +17,11 @@ public class StickCollider : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        var contactPoint = collision.contacts[0];
-        var normal = contactPoint.normal;
+        var contact = collision.contacts[0];
+        var normal = contact.normal;
 
-        transform.rotation = Quaternion.FromToRotation(-transform.up, normal);
-        transform.position = contactPoint.point;
+        transform.position = contact.point;
+        transform.rotation = Quaternion.FromToRotation(-transform.right, normal) * transform.rotation;
        
         _stick.gameObject.transform.SetParent(collision.gameObject.transform);
         _rigidbody.isKinematic = true;
