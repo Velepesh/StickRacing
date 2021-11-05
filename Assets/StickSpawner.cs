@@ -22,7 +22,6 @@ public class StickSpawner : MonoBehaviour
     {
         _currentStick = Spawn();
     
-
         return _currentStick;
     }
 
