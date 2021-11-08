@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameFinish : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _confetti;
-    [SerializeField] private Transform _finishWallForRotation;
+    [SerializeField] private UnityEngine.Transform _finishWallForRotation;
     [SerializeField] private Level _level;
 
     private void OnEnable()

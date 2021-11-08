@@ -3,7 +3,7 @@ using UnityEngine;
 public class BonusWall : MonoBehaviour
 {
     [SerializeField] private int _multiplier;
-    [SerializeField] private Transform _targetPoint;
+    [SerializeField] private UnityEngine.Transform _targetPoint;
     [SerializeField] private float _playerMoveDuration =2f;
 
     public Vector3 TargetPoint =>_targetPoint.position;

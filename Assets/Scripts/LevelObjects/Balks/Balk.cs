@@ -5,9 +5,9 @@ public class Balk : MonoBehaviour
 {
     [SerializeField] private float _forceOnAttach;
     [SerializeField] private Rigidbody _jointRigidbody;
-    [SerializeField] private Transform _nearPoint;
-    [SerializeField] private Transform _farPoint;
-    [SerializeField] private Transform _lookAtPoint;
+    [SerializeField] private UnityEngine.Transform _nearPoint;
+    [SerializeField] private UnityEngine.Transform _farPoint;
+    [SerializeField] private UnityEngine.Transform _lookAtPoint;
 
     private CameraMover _cameraMover;
     private Rigidbody _rigidbody;
@@ -15,8 +15,8 @@ public class Balk : MonoBehaviour
 
     public bool HasCharacter => CurrentCharacter;
     public Rigidbody JointRigidbody => _jointRigidbody;
-    public Transform NearPoint => _nearPoint;
-    public Transform FarPoint => _farPoint;
+    public UnityEngine.Transform NearPoint => _nearPoint;
+    public UnityEngine.Transform FarPoint => _farPoint;
     public Vector3 LookAtPoint => _lookAtPoint.position;
 
     public Vector3 PushVector = Vector3.zero;

@@ -7,7 +7,8 @@ namespace RootMotion.Demos {
 	/// <summary>
 	/// Simple GUI for quickly testing out interactions.
 	/// </summary>
-	public class InteractionSystemTestGUI : MonoBehaviour {
+	public class InteractionSystemTestGUI : MonoBehaviour 
+	{
 
 		[Tooltip("The object to interact to")]
 		public InteractionObject interactionObject;
@@ -16,26 +17,30 @@ namespace RootMotion.Demos {
 
 		private InteractionSystem interactionSystem;
 		
-		void Awake() {
+		void Awake() 
+		{
 			interactionSystem = GetComponent<InteractionSystem>();
 		}
 
 		void OnGUI() {
 			if (interactionSystem == null) return;
 
-			if (GUILayout.Button("Start Interaction With " + interactionObject.name)) {
+			if (GUILayout.Button("Start Interaction With " + interactionObject.name)) 
+			{
 				if (effectors.Length == 0) Debug.Log("Please select the effectors to interact with.");
 
-				foreach (FullBodyBipedEffector e in effectors) {
-					interactionSystem.StartInteraction(e, interactionObject, true);
-				}
+				//foreach (FullBodyBipedEffector e in effectors) 
+				//{
+					interactionSystem.StartInteraction(effectors[0], interactionObject, true);
+				//}
 			}
 
 			if (effectors.Length == 0) return;
 
-			if (interactionSystem.IsPaused(effectors[0])) {
-				if (GUILayout.Button("Resume Interaction With " + interactionObject.name)) {
-
+			if (interactionSystem.IsPaused(effectors[0])) 
+			{
+				if (GUILayout.Button("Resume Interaction With " + interactionObject.name)) 
+				{
 					interactionSystem.ResumeAll();
 				}
 			}

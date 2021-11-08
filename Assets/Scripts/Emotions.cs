@@ -42,7 +42,7 @@ public class Emotions : MonoBehaviour
 
     private void ShowEmotion(Vector2 position, float apperanceDuration, float disappearanceDuration)
     {
-        Transform emotion = Instantiate(_emotionPrefab, position, Quaternion.identity, _canvas.transform).transform;
+        UnityEngine.Transform emotion = Instantiate(_emotionPrefab, position, Quaternion.identity, _canvas.transform).transform;
         emotion.localScale = Vector3.zero;
         emotion.gameObject.SetActive(true);
 

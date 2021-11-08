@@ -4,7 +4,7 @@ using DG.Tweening;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Character _characterInteractionHandler;
-    [SerializeField] private Transform[] _wayPoints;
+    [SerializeField] private UnityEngine.Transform[] _wayPoints;
     [SerializeField] private float _timeOfDragging = 0.75f;
     [SerializeField] private float _dragDelay = 1.5f;
 

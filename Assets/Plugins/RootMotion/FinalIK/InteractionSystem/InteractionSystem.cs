@@ -183,13 +183,16 @@ namespace RootMotion.FinalIK {
 		/// <summary>
 		/// Starts the interaction between an effector and an interaction object.
 		/// </summary>
-		public bool StartInteraction(FullBodyBipedEffector effectorType, InteractionObject interactionObject, bool interrupt) {
+		public bool StartInteraction(FullBodyBipedEffector effectorType, InteractionObject interactionObject, bool interrupt) 
+		{
 			if (!IsValid(true)) return false;
 
 			if (interactionObject == null) return false;
 
-			for (int i = 0; i < interactionEffectors.Length; i++) {
-				if (interactionEffectors[i].effectorType == effectorType) {
+			for (int i = 0; i < interactionEffectors.Length; i++) 
+			{
+				if (interactionEffectors[i].effectorType == effectorType) 
+				{
 					return interactionEffectors[i].Start(interactionObject, targetTag, fadeInTime, interrupt);
 				}
 			}
@@ -608,9 +611,10 @@ namespace RootMotion.FinalIK {
 		private Collider lastCollider, c;
 
 		// Initiate
-		public void Start() {
+		public void Awake() 
+		{
 			if (fullBody == null) fullBody = GetComponent<FullBodyBipedIK>();
-			//Debug.Log(fullBody);
+
 			if (fullBody == null) {
 				Warning.Log("InteractionSystem can not find a FullBodyBipedIK component", transform);
 				return;

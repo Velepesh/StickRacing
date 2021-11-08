@@ -9,7 +9,7 @@ namespace EpicToonFX
         [SerializeField]
         public GameObject[] projectiles;
         [Header("Missile spawns at attached game object")]
-        public Transform spawnPosition;
+        public UnityEngine.Transform spawnPosition;
         [HideInInspector]
         public int currentProjectile = 0;
         public float speed = 500;

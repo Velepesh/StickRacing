@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class WaterLevel : MonoBehaviour
 {
-    [SerializeField] private Transform _water;
-    [SerializeField] private Transform _deathCollider;
+    [SerializeField] private UnityEngine.Transform _water;
+    [SerializeField] private UnityEngine.Transform _deathCollider;
     [SerializeField] private float _increasingWaterSpeed;
     [SerializeField] private Level _level;
     [SerializeField] private float _startTimer = 2f;

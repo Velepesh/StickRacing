@@ -18,10 +18,10 @@ public class CharacterView : MonoBehaviour
     [SerializeField] [Range(0f, 1f)] private float _leftHandWeight;
 
     private Animator _animator;
-    private Transform _cameraTransform;
+    private UnityEngine.Transform _cameraTransform;
 
-    private Transform _targetForRightHand;
-    private Transform _targetForLeftHand;
+    private UnityEngine.Transform _targetForRightHand;
+    private UnityEngine.Transform _targetForLeftHand;
 
     private IWall _testWall;
 
@@ -130,7 +130,7 @@ public class CharacterView : MonoBehaviour
             SetIKTarget(balk.FarPoint, balk.NearPoint);
     }
 
-    private void SetIKTarget(Transform targetForRightHand, Transform targetForLeftHand)
+    private void SetIKTarget(UnityEngine.Transform targetForRightHand, UnityEngine.Transform targetForLeftHand)
     {
         _targetForRightHand = targetForRightHand;
         _targetForLeftHand = targetForLeftHand;

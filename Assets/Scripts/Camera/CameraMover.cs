@@ -4,7 +4,7 @@ using DG.Tweening;
 [RequireComponent(typeof(Camera))]
 public class CameraMover : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
+    [SerializeField] private UnityEngine.Transform _target;
     [SerializeField] private float _smoothSpeed;
     [SerializeField] private Vector3 _positionOffset;
     [SerializeField] private Vector3 _lookAtOffset;

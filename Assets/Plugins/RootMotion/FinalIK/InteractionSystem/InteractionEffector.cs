@@ -127,17 +127,24 @@ namespace RootMotion.FinalIK {
 		// Start interaction
 		public bool Start(InteractionObject interactionObject, string tag, float fadeInTime, bool interrupt) {
 			// If not in interaction, set effector positions to their bones
-			if (!inInteraction) {
+			if(!inInteraction)
+			{
 				effector.position = effector.bone.position;;
 				effector.rotation = effector.bone.rotation;;
-			} else {
-				if (!interrupt) return false;
-				else defaults = false;
+			} 
+			else 
+			{
+				if (!interrupt) 
+					return false;
+				else 
+					defaults = false;
 			}
-
 			// Get the InteractionTarget
 			target = interactionObject.GetTarget(effectorType, tag);
-			if (target == null) return false;
+
+			if (target == null) 
+				return false;
+
 			interactionTarget = target.GetComponent<InteractionTarget>();
 
 			// Start the interaction

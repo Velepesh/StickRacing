@@ -1,14 +1,21 @@
 using UnityEngine;
+using UnityEngine.Events;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Stick : MonoBehaviour
 {
-    [SerializeField] private StickCollider _stickCollider;
+    [SerializeField] private StickConnectionCollider _stickCollider;
     [SerializeField] private GameObject _stick;
     [SerializeField] private float _speed;
     [SerializeField] private float _rotationSpeed;
+    [SerializeField] private Transform _connectToStickPoint;
 
     private bool _isThrowing = false;
     private Vector3 _direction;
+    private Rigidbody _rigidbody;
+
+    public event UnityAction<Stick> Connected;
+    public Transform ConnectToStickPoint => _connectToStickPoint;
 
     private void OnEnable()
     {
@@ -18,6 +25,13 @@ public class Stick : MonoBehaviour
     private void OnDisable()
     {
         _stickCollider.Connected -= OnConnected;
+    }
+
+    private void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.isKinematic = false;
+        _rigidbody.useGravity = false;
     }
 
     private void Update()
@@ -41,5 +55,8 @@ public class Stick : MonoBehaviour
     private void OnConnected()
     {
         _isThrowing = false;
+
+        _rigidbody.isKinematic = true;
+        Connected?.Invoke(this);
     }
 }
